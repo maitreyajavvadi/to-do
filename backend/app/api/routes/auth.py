@@ -10,6 +10,7 @@ from app.core.security import (
     verify_password,
     create_access_token,
     create_refresh_token,
+    get_current_user,
 )
 
 router = APIRouter()
@@ -63,6 +64,5 @@ async def login(payload: UserLogin, db: AsyncSession = Depends(get_db)):
 
 
 @router.get("/me", response_model=UserOut)
-async def get_me(current_user: User = Depends(lambda: None)):
-    from app.core.security import get_current_user
+async def get_me(current_user: User = Depends(get_current_user)):
     return current_user

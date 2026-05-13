@@ -1,8 +1,8 @@
 import uuid
 from datetime import datetime
 from sqlalchemy import (
-    String, Text, Boolean, DateTime, Date,
-    ForeignKey, Enum as SAEnum, Table, Column, Integer,
+    String, Text, Boolean, DateTime,
+    ForeignKey, Enum as SAEnum, Table, Column,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID
